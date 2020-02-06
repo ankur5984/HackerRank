@@ -1,0 +1,2 @@
+# HackerRank
+day wise solution
