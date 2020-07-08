@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	public static int fewestCoin(String coins)
+	{
+		int index = 0;
+		char[] str = coins.toCharArray();
+ 
+		for (int i = 0;i<str.length;i++)
+		{
+			int j;
+			for (j=0; j<i;j++)
+			{
+				if(str[i] == str[j])
+				{
+					break;
+				}
+			}
+			if( j==i)
+			{
+				str[index++] = str[i];
+			}
+		}
+ 
+		String sb = String.valueOf(Arrays.copyOf(str,index));
+		return sb.length();
+ 
+ 
+	}
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		String coins= "cacabc";
+ 
+		System.out.println(fewestCoin( coins));
+	}
+}
